@@ -120,23 +120,24 @@ switch (month) {
         break;   
     case 6:   
         result = "Jun";
+        break;
     case 7:
-        result = "July";
+        result = "July";;
         break;
     case 8:
-        result = "August"
+        result = "August";
         break;
     case 9:
-        result = "Septembar"
+        result = "Septembar";
         break;
     case 10:
-        result = "October"
+        result = "October";
         break;
     case 11:
-        result = "November"
+        result = "November";
         break;
     case 12:
-        result = "December"
+        result = "December";
         break;
     default:    
         result = 'Input must Input must be a number between 1 and 12 a number between 1 and 7';    
@@ -167,7 +168,7 @@ switch (month) {
         break;
     case 12:
     case 1:
-    case 12:
+    case 2:
         result = "Winter";
         break;
     default:    

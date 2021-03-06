@@ -55,7 +55,7 @@ Output: The sign is -
 var d=3;
 var e=-7;
 var f=2;
-if ((d+e+f)>=0) {
+if ((d*e*f)>=0) {
     console.log("The sign of products is +");
 } else {
     console.log("The sign of products is -");
@@ -168,10 +168,16 @@ Formula : F = (9*C/5) + 32 [ where c = temperature in Celsius and f = temperatur
 Sample Input: 60°C
 Output : 60°C is 140 °F
 */
-var input = 60;
-var F = (9*input/5)+32;
-var C = (F-32)*5/9;
-console.log("Temperatura ", C, "*C je ", F, "*F." );
+var temp = 60;
+var stepen = 'C'; //"C" or "F" as possible input
+if (stepen === "C") {
+    rezultat = (9*temp/5)+32;
+    x = "F";
+} else {
+    rezultat = (F-32)*5/9;
+    x = "C";
+}
+console.log(temp, "*", stepen, "is", rezultat, "*", x);
 
 /*
 Write a JavaScript program to get the difference between a given number and 13, if
