@@ -57,12 +57,12 @@ var min = 0;
 var result = 0;
 var a = [4, 2, 2, -1, 6];
 for (x=0; x<a.length; x++) {
-    if (a[x]<=a[0]) {
+    if (a[x]<=min) {
         min = a[x];
     }
 }
 for (x=0; x<a.length; x++) {
-    if (a[x]<=a[0] & a[x]!==min) {
+    if (a[x]<=result & a[x]!==min) {
         result = a[x];
     }
 }
@@ -134,7 +134,7 @@ for (x=0; x<a.length*2; x++) {
     if (x<a.length) {
         c[x] = a[x]; 
     } else {
-        c[x] = b[y];
+        c[x] = b[y]; 
         y++;
     }
 }
