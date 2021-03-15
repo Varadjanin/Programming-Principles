@@ -44,7 +44,12 @@ console.log(s, p);
 var x = ["1", "A", "B", "c", "r", true, NaN, undefined];
 */
 var x = ["1", "A", "B", "c", "r", true, NaN, undefined];
-console.log(x[0]+x[1]+x[2]+x[3]+x[4]+x[5]+x[6]+x[7]);
+var result = '';
+//console.log(x[0]+x[1]+x[2]+x[3]+x[4]+x[5]+x[6]+x[7]);
+for (var a=0; a<x.length; a++) {
+    result += x[a]; 
+}
+console.log(result);
 /*
 5. Write a program that prints the elements of the following array.
 var a = [
@@ -55,12 +60,17 @@ var a = [
 ];
 */
 var a = [[1, 2, 1, 24],[8, 11, 9, 4],[7, 0, 7, 27]];
-console.log(a)
+for (var i=0; i<a.length; i++) {
+    for(var j=0; j<a[1].length; j++) {
+        console.log(a[i][j]);
+    }
+}
+
 /*
 6. Write a program that outputs the sum of squares of the first 20 numbers.
 */
 var s = 0;
-for (x=0; x<20; x++) {
+for (var x=0; x<20; x++) {
     s += x*x;
 }
 console.log(s);
@@ -83,7 +93,7 @@ The grades are computed as follows :
 result = 0;
 sum = 0;
 var a = [80,77,88,95,68];
-for (x=0; x<a.length; x++) {
+for (var x=0; x<a.length; x++) {
     sum += a[x];
 }
 averageMark = sum/a.length;
@@ -109,7 +119,7 @@ percentage of programmer candidates. So if you’ve solved it, you’re now allo
 good about yourself.
 */
 var result = [];
-for (x=0; x<100; x++) {
+for (var x=0; x<100; x++) {
     if (x%3===0 & x%5===0) {
         result[x] = "FizzBuzz";
     }
@@ -125,3 +135,13 @@ for (x=0; x<100; x++) {
 }
 console.log(result);
 
+/*Sasino resenje:
+*/
+for (let n = 1; n <= 100; n++) {
+  let output = "";
+  if (n % 3 == 0) output += "Fizz";
+  if (n % 5 == 0) output += "Buzz";
+  console.log(output || n);
+}
+/*
+*/
