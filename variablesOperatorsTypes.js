@@ -174,3 +174,15 @@ console.log(typeof "2E+2");
 a=3e+3; 
 b=++a;
 console.log(b);
+var h=3+undefined;
+console.log(h);
+console.log(typeof(console.log(10+"ha"+6+6)))
+var x=1, y=3, z=8
+x=y=z=8
+console.log(x,y,z)
+var x=[1,2,3]
+x.length=0
+console.log(x)
+console.log(2<3<1)
+var x = 0x241;
+console.log(typeof typeof 1)

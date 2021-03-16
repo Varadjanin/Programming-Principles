@@ -67,6 +67,8 @@ for (x=0; x<a.length; x++) {
     }
 }
 console.log(result)
+
+
 /*
 5. Write a program that calculates the sum of positive elements in the array.
 Input array: [3, 11, -5, -3, 2]
@@ -100,6 +102,19 @@ if (counter === a.length) {
 } else {
     console.log("The array isn't symmetric");
 }
+
+//Dariovo resenje:
+var a = [2, 4, -2, 7, -2, 4, 2];
+var isSym = true;
+for (start=0, end=a.length-1; start<end; start++, end--) {
+    if (a[start] !== a[end]) {
+        isSym = false;
+    }
+}
+console.log(isSym ? "The array is symetric.": "Th array isn't symetric.")
+
+
+
 /*
 7. Write a program that intertwines two arrays. You can assume the arrays are of the same
 length.
@@ -109,6 +124,7 @@ Output array: [4, 3, 5, 8, 6, 11, 2, 9]
 var a = [4, 5, 6, 2];
 var b = [3, 8, 11, 9];
 var c = [];
+c.length = a.length+b.length;
 var y = 0;
 var z = 0;
 for (x=0; x<a.length*2; x++) {
@@ -121,16 +137,33 @@ for (x=0; x<a.length*2; x++) {
     }
 }
 console.log(c);
+
+//Dariovo resenje:
+
+var a = [4, 5, 6, 2];
+var b = [3, 8, 11, 9];
+var arrResult = [];
+
+//if arrays length not equal - var maxlength = a.length>b.length ? a.length : b.length
+
+for (var i=0; i< a.length; i++) {
+    //if arrays length not equal - if (a[i]) {}
+    arrResult[arrResult.length] = a[i];
+    //if arrays length not equal - if (b[i]) {}
+    arrResult[arrResult.length] = b[i];
+}
+console.log(arrResult);
+
 /*
 8. Write a program that concatenates two arrays.
 Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
 Output array: [4, 5, 6, 2, 3, 8, 11, 9]
 */
-var a = [4, 5, 6, 2];
+var a = [4, 5, 6];
 var b = [3, 8, 11, 9];
 var c = [];
 var y = 0;
-for (x=0; x<a.length*2; x++) {
+for (x=0; x<a.length+b.length; x++) {
     if (x<a.length) {
         c[x] = a[x]; 
     } else {
@@ -139,6 +172,21 @@ for (x=0; x<a.length*2; x++) {
     }
 }
 console.log(c);
+
+//Dariovo resenje:
+
+var a = [4, 5, 6, 2];
+var b = [3, 8, 11, 9];
+var arrResult = [];
+
+for (var i=0; i<a.length; i++) {
+    arrResult[arrResult.length] = a[i];
+}
+for (var j=0; j<b.length; j++) {
+    arrResult[arrResult.length] = b[j];
+}
+console.log(arrResult);
+
 /*
 9. Write a program that deletes a given element e from the array a.
 Input: e = 2, a = [4, 6, 2, 8, 2, 2]
@@ -182,3 +230,17 @@ if (p>=a.length) {
     }
 }
 console.log(b);
+
+//Dariovo resenje
+
+var a = [2, -2, 33, 12, 5, 8];
+var e = 78;
+var p = 3;
+var newArray = [];
+for (var i=0; i<a.length; i++) {
+    if (i === p) {
+        newArray[i] = e;
+    }
+    newArray[newArray.length] = a[i];
+}
+console.log(newArray);
