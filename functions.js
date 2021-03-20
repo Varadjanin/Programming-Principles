@@ -38,14 +38,15 @@ function averige(a,b,c,d) {
 /*5. Write a program that draws a square of a given size. For example, if the size of square
 is 5 the program should draw:
 *****
-* *
-* *
-* *
+*   *
+*   *
+*   *
 *****
 */
 
 function square(x) {
     var red = '';
+    var space = ' ';
     for(var i=0; i<x; i++) {
         if (i===0 || i===x-1) {
             for(var j=0; j<x; j++) {
@@ -53,14 +54,18 @@ function square(x) {
             }
             red = red + '\n';
         } else {
-        red = red + '* *' + '\n';
+            space =' ';
+            for(var z=1; z<x-2; z++) {
+                space = space + ' ';
+            }
+            red = red + '*' + space + '*' + '\n';
         }
     }
     return red;
 }
-var proba = square(5);
+var proba = square(20);
 console.log(proba);
-
+//pojavljuju se 0 od treceg reda
 
 
 
