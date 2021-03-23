@@ -63,10 +63,54 @@ function square(x) {
     }
     return red;
 }
-var proba = square(20);
+var proba = square(5);
 console.log(proba);
-//pojavljuju se 0 od treceg reda
 
+/*
+jos mogucih resenja:
+
+function makeSquare(n) {
+	var result = '';
+	var space = ' ';
+	var star = '*';
+	var newLine = '\n';
+	for (var i = 0; i < n; i++) {
+		for (var j = 0; j < n; j++) {
+			if (i === 0 || i === n-1 || j === 0 || j === n-1) {
+				result += star;
+			} else {
+				result += space;
+			}
+		}
+		result += newLine;
+	}
+	return result;
+}
+
+
+
+
+function sqaureDraw (a) {
+    var field = "";
+    for (var i = 0; i < a; i++){
+        for (var j = 0; j < a; j++) {
+            if (i > 0 && i < a-1 && j > 0  && j < a-1) {
+                field += " ";
+            } else {
+                field += "*";
+            }
+        } 
+        field += "\n";
+    }
+    return field;
+}
+var result5 = sqaureDraw(7);
+console.log (result5);
+
+
+
+
+*/
 
 
 /*
@@ -101,6 +145,40 @@ function chart(a,b,c) {
 }
 var proba = chart(5,3,7);
 console.log(proba);
+
+/*
+jos mogucih resenja:
+
+
+function makeChart() {
+	var result = '';
+	for (var i = 0; i < arguments.length; i++) {
+		for (var j = 0; j < arguments[i]; j++) {
+			result += '*';
+		} 
+		result += '\n';
+	}
+	return result;
+}
+console.log(makeChart(6,7,8,9))
+
+
+function horizontalChart (Array){
+var field = "";
+for (var i = 0; i < Array.length; i++){
+    for (var j = 0; j < Array[i]; j++) { 
+            field += "*";
+        }
+        field += "\n";    
+    }    
+return field;
+}
+var result6 = horizontalChart([3, 7, 5]);
+console.log (result6);
+
+
+*/
+
 
 //7. Write a program that calculates a number of digits of a given number.
 
