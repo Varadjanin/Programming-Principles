@@ -154,7 +154,23 @@ The result should then be multiplied by 12.5 and displayed in console.
 Output: 2350000
 */
 
+function addEvenSubstractOddMultiply() {
+    var odsuma, suma = 0;
+    for(var i=0; i<=1000; i++) {
+        if(i%2===0) {
+            suma += i;
+        }
+    }
+    for(var j=0; j<=500; j++) {
+        if(j%2!==0) {
+            suma -= j;
+        }
+    }
+    var result = suma * 12.5;
+    return result;
+}
 
+console.log(addEvenSubstractOddMultiply());
 
 /*
 Define a 10 element array. Take the first two letters from every string (that has at least 2 letters) in the array 
@@ -163,6 +179,17 @@ Input: [ "M", "Anne", 12, "Steve", "Joe", "John", "David", "Mark", true, "A" ]
 Output: AnStJoJoDaMa
 */
 
+function twoLettersString(arr) {
+    var newString = '';
+    for(var i=0; i<arr.length; i++) {
+        if(typeof arr[i] === 'string' && arr[i].length >= 2) {
+            newString += arr[i][0] + arr[i][1];
+        }
+    }
+    return newString;
+}
+var a = ["M", "Anne", 12, "Steve", "Joe", "John", "David", "Mark", true, "A"];
+console.log(twoLettersString(a));
 
 /*
 Write a program that takes a string and prints its characters out in reversed order in the console.
@@ -170,7 +197,15 @@ Input:  Belgrade Institute of Technology
 Output: ygolonhceT fo etutitsnI edargleB
 */
 
-
+function reversedString(str) {
+    var result = '';
+        for(var j=str.length-1; j>=0; j--) {
+            result += str[j];
+        }
+    return result;
+}
+var a = 'Belgrade Institute of Technology';
+console.log(reversedString(a));
 
 /*Write a program that displays all the combinations of two numbers between 1 and 7. 
 Don't display two of the same numbers at the same time. Display the number of possible combinations, as well. 
