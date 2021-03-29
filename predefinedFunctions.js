@@ -235,7 +235,7 @@ the correct suffix such as 1st, 2nd, 3rd or 4th.
 1 --> 1st
 11 --> 11th*/
 
-function humanizeNumber (x) {
+/*function humanizeNumber (x) {
     var str = '' + x;
     var result = '';
     if (str[str.length-1] == 1) {
@@ -250,4 +250,19 @@ function humanizeNumber (x) {
     return result;
 }
 
-console.log(humanizeNumber(948476573));
+console.log(humanizeNumber(948476573)); */
+
+function humanize(number) {
+    if(number % 100 >= 11 && number % 100 <= 13)
+        return number + "th";
+    
+    switch(number % 10) {
+        case 1: return number + "st";
+        case 2: return number + "nd";
+        case 3: return number + "rd";
+    }
+    
+    return number + "th";
+}
+
+console.log(humanize(11)); 

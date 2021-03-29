@@ -26,7 +26,7 @@ Input array: [-3, 11, 5, 3.4, -8]
 Output array: [-3, 22, 10, 6.8, -8]
 */
 var a = [-3, 11, 5, 3.4, -8];
-for (x=0; x<a.length; x++) {
+for (var x=0; x<a.length; x++) {
     if (a[x]>0) {
         a[x] *= 2;
     }
@@ -38,11 +38,11 @@ index.
 Input array: [4, 2, 2, -1, 6]
 Output: -1, 3
 */
-var min = 0;
-var index = 0;
 var a = [4, 2, 2, -1, 6];
-for (x=0; x<a.length; x++) {
-    if (a[x]<=a[0]) {
+var min = a[0];
+var index = 0;
+for (var x=0; x<a.length; x++) {
+    if (a[x]<=min) {
         min = a[x];
         index = x;
     }
@@ -53,15 +53,15 @@ console.log("Najmanji broj je:", min, "Indeks najmanjeg broja je:", index);
 Input array: [4, 2, 2, -1, 6]
 Output: 2
 */
-var min = 0;
-var result = 0;
 var a = [4, 2, 2, -1, 6];
-for (x=0; x<a.length; x++) {
+var min = a[0];
+var result = a[0];
+for (var x=0; x<a.length; x++) {
     if (a[x]<=min) {
         min = a[x];
     }
 }
-for (x=0; x<a.length; x++) {
+for (var x=0; x<a.length; x++) {
     if (a[x]<=result & a[x]!==min) {
         result = a[x];
     }
@@ -76,7 +76,7 @@ Output: 16
 */
 var suma = 0;
 var a = [3, 11, -5, -3, 2];
-for (x=0; x<a.length; x++) {
+for (var x=0; x<a.length; x++) {
     if (a[x]>=0) {
         suma += a[x];
     }
@@ -92,7 +92,7 @@ Output: The array isn’t symmetric.
 */
 var a = [2, 4, -2, 7, -2, 4, 2];
 var counter = 0;
-for (x=0; x<a.length; x++){
+for (var x=0; x<a.length; x++){
     if (a[x]===a[a.length-1-x]) {
         counter++
     }
@@ -106,7 +106,7 @@ if (counter === a.length) {
 //Dariovo resenje:
 var a = [2, 4, -2, 7, -2, 4, 2];
 var isSym = true;
-for (start=0, end=a.length-1; start<end; start++, end--) {
+for (var start=0, end=a.length-1; start<end; start++, end--) {
     if (a[start] !== a[end]) {
         isSym = false;
     }
@@ -127,7 +127,7 @@ var c = [];
 c.length = a.length+b.length;
 var y = 0;
 var z = 0;
-for (x=0; x<a.length*2; x++) {
+for (var x=0; x<a.length*2; x++) {
     if (x%2===0) {
         c[x] = a[y]; 
         y++;
@@ -163,7 +163,7 @@ var a = [4, 5, 6];
 var b = [3, 8, 11, 9];
 var c = [];
 var y = 0;
-for (x=0; x<a.length+b.length; x++) {
+for (var x=0; x<a.length+b.length; x++) {
     if (x<a.length) {
         c[x] = a[x]; 
     } else {
@@ -196,7 +196,7 @@ var e = 2;
 var a = [4, 6, 2, 8, 2, 2];
 var c = [];
 var y = 0;
-for (x=0; x<a.length; x++) {
+for (var x=0; x<a.length; x++) {
     if (a[x] !== e) {
         c[y] = a[x];
         y++;
@@ -218,7 +218,7 @@ b.length = a.length +1;
 if (p>=a.length) {
     console.log("Error.");
 } else {
-    for (x=0; x<a.length; x++) {
+    for (var x=0; x<a.length; x++) {
         if (x === p) {
             b[x] = e;
             a.length++;
