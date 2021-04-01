@@ -149,7 +149,6 @@ function replaceSpace(str, x) {
     if(typeof(x) === 'undefined') {
         x="-";
     }
-    //ispod je negde problem zbog kojeg mi u novom stringu sabira neki undefined element.
     for(var i=0; i<str.length; i++) {
         if(str[i]!== " ") {
             newString += str[i];

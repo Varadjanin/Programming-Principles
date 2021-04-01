@@ -160,6 +160,20 @@ for (var x=0; x<4; x++) {
 }
 
 
+//another partial solution:
+
+switch (pin) {
+    case 0704:
+        console.log("That was correct."); 
+        break;
+    default:    
+        result = "Sorry that was wrong.\n Please make your guess:";    
+        break;
+}
+
+
+
+
 
 /*
 Exercise 9)

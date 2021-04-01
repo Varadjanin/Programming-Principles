@@ -182,17 +182,27 @@ console.log(wordWithinString("The quick brown fox", "fox"));
 
 */
 
-function hideEmail(email) {
-var avg, splitted, part1, part2;
-    splitted = email.split("@");        //didn't know how to do this one!
-    part1 = splitted[0];
-    avg = part1.length / 2;
-    part1 = part1.substring(0, (part1.length - avg));
-    part2 = splitted[1];
-    return part1 + "...@" + part2;
-}
 
-console.log(hideEmail("myemailaddress@gmail.com"));
+function hideEmail(email) {
+    var spliter = 0;
+    newEmail = '';
+    for(var i=0; i<email.length; i++) {
+        if(email[i]==="@") {
+            spliter = i;
+        }
+    }
+    for(var j=0; j<3; j++) {
+        newEmail += email[j];
+    }
+    newEmail += "...";
+    for(var k=spliter; k<email.length; k++) {
+        newEmail += email[k];
+    }
+    return newEmail;
+}
+console.log(hideEmail("mbodrozic@gmail.com"));
+    
+
 
 /*
     10. Write a program to find the most frequent item of an array.

@@ -212,13 +212,41 @@ Don't display two of the same numbers at the same time. Display the number of po
 (E.g. (1.2),(2,1) is allowed, but not (1,1), (2,2)...).
 */
 
-
+function combinationsOfTwoNumbers() {
+    var comb = [];
+    var counter = 0;
+    for(var i=1; i<=7; i++) {
+        for(var j=i+1; j<=7; j++){
+            if(i!==j) {
+                comb += '('+ i+ ','+ j+ ')';
+                comb += '('+ j+ ','+ i+ ')';
+                counter += 2;
+            }
+        }
+    }
+    return "These are the combinations: " + comb + "\n This is the number of combinations: " + counter;
+}
+console.log(combinationsOfTwoNumbers());
 
 /*Write a program that checks if the entered number is a prime number (i.e. divisible only by 1 and by itself).
 Input:  17    | 15
 Output: true  | false
 */
 
+function isPrime(number) {
+    var counter = 0;
+    for(var i=2; i<number-1; i++) {
+        if(number%i===0) {
+            counter ++;
+        }
+    }
+    if(counter>0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+console.log(isPrime(15));
 
 /*
 Check if a given string is a palindrome (spaces are ignored).
@@ -226,6 +254,25 @@ Input:  eye  | Geek  | a nut for a jar of tuna
 Output: true | false | true
 */
 
+function isPalindrome(str) {
+    var newStr = '';
+    for(var i=0; i<str.length; i++) {
+        if(str[i] !== ' ') {
+            newStr += str[i];
+        }
+    }
+    var half = newStr.length;
+    for (var i = 0; i < half/2; i++) {
+        if (newStr[i] !== newStr[half - 1 - i]) {
+            return false;
+        }
+        return true;
+    }
+}
+
+console.log(isPalindrome('a nut for a jar of tuna'));
+console.log(isPalindrome('Geek'));
+console.log(isPalindrome('eye'));
 
 /*
 Write a program that calculates the greatest common divisor of two integers. 
@@ -235,3 +282,27 @@ Input:  192 42 | 81 9
 Output: 6      | 9
 */
 
+function greatestCommonDivisor(a,b) {
+    var divisor = 1;
+    if(a>=b) {
+        for(var i=b; i>0; i--) {
+            if(a%i===0 && b%i===0) {
+                divisor = i;
+                break;
+            } else {
+                continue;
+            }
+        }
+    } else {
+        for(var i=a; i>0; i--) {
+            if(b%i===0 && a%i===0) {
+                divisor = i;
+                break;
+            } else {
+                continue;
+            }
+        }
+    }
+    return divisor;
+}
+console.log(greatestCommonDivisor(42,192));
