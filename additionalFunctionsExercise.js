@@ -144,12 +144,33 @@ console.log(firstLetterToUpper('the quick brown fox'));
 
 
 /*
-6. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string. Go to the editor
+6. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string. 
 Example string : 'Web Development Tutorial'
 Expected Output : 'Development'
-Click me to see the solution
 */
 
+function longestWordInString(str) {
+    var newStr = '';
+    var words = [];
+    for(var i=0; i<str.length; i++) {
+        if(str[i]!==' ') {
+            newStr += str[i];
+        } else {
+            words[words.length] = newStr;
+            newStr = '';
+        }
+    }
+    words[words.length] = newStr;
+
+    var max = words[0];
+    for(var y=0; y<words.length; y++) {
+        if(words[y].length>max.length) {
+           var max = words[y];
+        }
+    }
+    return max;
+}
+console.log(longestWordInString('Web Development Tutorial'));
 
 /*
 7. Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string. Go to the editor
