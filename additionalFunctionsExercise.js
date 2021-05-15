@@ -524,12 +524,14 @@ rather than returning only one substring or returning the maximum length of a pa
 
 
 
-/*primeri iz testa:
+//primeri iz testa:
+
 console.log(parseInt("ab345ab"));
 function f(a,b) {
     return a+b;
 }
 console.log(f(12));
+
 
 var m = '';
 var n = 4;
@@ -539,11 +541,13 @@ while(n>=0) {
 }
 console.log(m);
 
+
 var sum=0;
 for(i=0; i<5;i++) {
     sum += i;
     console.log(sum);
 }
+
 
 function m(a,b) {
     var result;
@@ -554,6 +558,8 @@ var product;
 product = m(4);
 console.log(product);
 
+
+
 var a = [2,15,18,-4,2];
 var result = a[0];
 for(i=1; i<a.length; i++) {
@@ -563,9 +569,13 @@ for(i=1; i<a.length; i++) {
 }
 console.log(result);
 
+
+
 var a = [2,15,18,-4,2];
 a.length = 2;
 console.log(a);
+
+
 
 function m(a) {
     for(i=0,j=a.length-1;i<j; i++,j--){
@@ -576,6 +586,8 @@ function m(a) {
     return a;
 }
 console.log(m(["3", 4,2,true,-2]));
+
+
 
 var result;
 var n;
@@ -594,6 +606,8 @@ switch (n) {
 }
 console.log(result);
 
+
+
 for(var i=1; i<6; i++) {
     if (i==3 || i==4) {
         break;
@@ -601,10 +615,14 @@ for(var i=1; i<6; i++) {
     console.log(i);
 }
 
+
+
 for(var i=0; i<10; i+=2) {
     
     console.log(i);
 }
+
+
 
 var a=[];
 for(var i=0; i<4; i++) {
@@ -613,21 +631,28 @@ for(var i=0; i<4; i++) {
 }
 console.log(a);
 
+
+
 var sum=0;
 for(var i=4; i<8; i=i+1) {
     sum += i;
     console.log(sum);
 }
 
+
+
 var s = "coffee";
 s[0] = "C";
 console.log(s);
 
+
 var n = 10;
 console.log(++n);
 
+
 var result = 0%2===0;
 console.log(result);
+
 
 function m(a,b) {
     return 1+a+b;
@@ -635,6 +660,7 @@ function m(a,b) {
 var product;
 product = m(4,5,32,11);
 console.log(product);
+
 
 function m(a,b) {
     var result;
@@ -645,6 +671,7 @@ var product;
 product = m(4,5);
 console.log(product);
 
+
 var d = "Do the magic"
 var s='';
     for(i=d.length-1;i>=0;i--){
@@ -652,9 +679,11 @@ var s='';
     }
 console.log(s);
 
+
 var n = 23;
 n -=2;
 console.log(n);
+
 
 var sum = 0;
 for(i=0;i<10; i++){
@@ -667,20 +696,66 @@ for(i=0;i<10; i++){
 }
 console.log(sum);
 
+
+
 var s="abc";
 console.log(s+s);
+
+
 
 var a = true;
 var b = false;
 console.log(a && b);
 console.log(!a);
 
+
+
 for(var i=0; i<5;) {
     console.log("*");
 }
 
+
 function f() {};
 var result;
 result= f();
-console.log(result);*/
+console.log(result);
 
+//map method:
+
+var array = [1, 2, 3, 4, 5, 6];
+var mapHandler = function(num) {
+	return num * 10;
+}
+var mappedArray = array.map(mapHandler);
+var filteredArray = array.filter(function(number) {
+	return number%2 === 0;
+})
+console.log(mappedArray);
+console.log(filteredArray);
+
+//callback functions:
+
+function modifyNumber(number, modification) {
+	var result = modification(number);
+	return result;
+}
+function duplicateNumber(n) {
+	return n * 2;
+}
+function square(n) {
+	return n * n;
+}
+var output = modifyNumber(100, square);
+console.log(output);
+function calculator(num1, num2,  operation) {
+	var result = operation(num1, num2);
+	return result;
+}
+function multiplication(n1, n2) {
+	return n1 * n2;
+}
+function addition(n1, n2) {
+	return n1 + n2;
+}
+var output = calculator(100, 200, addition);
+console.log(output);
