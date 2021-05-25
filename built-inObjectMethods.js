@@ -2,7 +2,7 @@
 Try to use built-in object methods to solve some of the problems here 
 
 
-Write a functional expression that duplicates each element of a given array.
+1. Write a functional expression that duplicates each element of a given array.
 Input: [2, 4, 7, 11, -2, 1]
 Output: [2, 2, 4, 4, 7, 7, 11, 11,  -2, -2, 1, 1] */
 
@@ -21,7 +21,7 @@ console.log(result);
 
 
 /*
-Write a functional expression that removes all duplicates in a given array.
+2. Write a functional expression that removes all duplicates in a given array.
 Input: [8, 13, 8, 9, 12, 8, 1, 1, 4, 13]
 Output: [1, 4, 8, 9, 12, 13] */
 
@@ -33,7 +33,7 @@ console.log(result);
 
 
 /*
-Write a function that checks if a given array has odd number of elements.
+3. a) Write a function that checks if a given array has odd number of elements.
 Input: [1, 2, 9, 2, 1]
 Output: true
 */ 
@@ -51,7 +51,7 @@ console.log(hasOddNumberOfElements(arr));
 
 
 /*
-Write a function that counts the number of elements less than the middle element. 
+b) Write a function that counts the number of elements less than the middle element. 
 If the given array has an even number of elements, print out an error message. 
 Input: [-1, 8.1, 3, 6, 2.3, 44, 2.11]
 Output: 4
@@ -75,43 +75,67 @@ var arr = [-1, 8.1, 3, 6, 2.3, 44, 2.11];
 console.log(countNumbersLessThanMiddle(arr));
 
 /*
-Write a function that finds the smallest element of a given array. 
+4. Write a function that finds the smallest element of a given array. 
 The function should return an object that contains the smallest value and its last position in the array.
 Input: [1, 4, -2, 11, 8, 1, -2, 3]
 Output:  { minValue: -2, minLastIndex: 6 }
 */
 
 function findTheSmallestElement (arr) {
-
-
-
+	var min = Math.min(...arr); //shows NaN when not all numbers in arr, and Infinity when no parameters, index -1
+	var index = arr.lastIndexOf(min);
 	var objSmall = {
 		minValue: min,
-		minLastIndex: arr.indexOf(min),
+		minLastIndex: index,
 	}
 	return objSmall;
 }
 
+console.log(findTheSmallestElement([1, 4, -2, 11, 8, 1, -2, 3]));
+
 /*
-Write a function that finds all the elements in a given array less than a given element. 
+5. a) Write a function that finds all the elements in a given array less than a given element. 
 	Input: [2, 3, 8, -2, 11, 4], 6 
-	Output: [2, 3, -2, 4]
+	Output: [2, 3, -2, 4]*/
 
-Write a function that finds all the elements in a given array that start with the “pro” substring. 
+	function findSmallerElements(arr, element) {
+	return arr.filter(num => num< element);
+}
+console.log(findSmallerElements([2, 3, 8, -2, 11, 4], 6));
+
+/*
+b) Write a function that finds all the elements in a given array that start with the “pro” substring. 
 The function should be case insensitive. 
-		Input: [’JavaScript’, ’Programming’, ’fun’, ’product’] 
-	Output: [’Programming’, ‘product’]
+Input: [’JavaScript’, ’Programming’, ’fun’, ’product’] 
+Output: [’Programming’, ‘product’]
+*/
 
-Write a function that expects an array and a callback function that filters out some of the elements. 
+function findElementsPro (arr,sub) {
+	var result = arr.filter(element => element.toUpperCase().includes(sub.toUpperCase()));
+	return result;
+}
+console.log(findElementsPro(['JavaScript', 'Programming', 'fun', 'product'], 'pro'));
+
+/*
+c) Write a function that expects an array and a callback function that filters out some of the elements. 
 Use functions defined in a) or b) to test it. 
 */
 
+function findElementsPro (arr) {
+	var result = arr.filter(element => element.toUpperCase().includes("PRO"));
+	return result;
+}
 
+function nesto (arr, func) {
+	return func(arr);
+}
+
+console.log(nesto(['JavaScript', 'Programming', 'fun', 'product'], findElementsPro));
 
 /*
 Write a list (array) of products you usually buy in the supermarket. 
 Write a price and name for each product. For example,
-	[
+[
 {name: ‘apples’, price: 100}, 
 {name: ‘milk’, price: 80}, 
 {name:’bananas’, price: 150}
@@ -123,6 +147,10 @@ Write a function that prints out the name of the most expensive product on your 
 Write the name in uppercase. 
 */
 
+var myShoppingList = [{apples: 100}, {milk: 80}, {bananas: 150}];
+function totalPrice (arr) {
+	return 
+}
 
 
 /*
