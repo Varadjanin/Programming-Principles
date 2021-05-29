@@ -46,14 +46,8 @@ Create checkoutAndBuy function which receives shopping bag and payment card and 
     function ShoppingBag() {
         this.listOfProducts = [];
         this.addProduct = function(product) {
-            var year = product.expirationDate.getFullYear();
-			var month = product.expirationDate.getMonth() + 1;
-			var today = product.expirationDate.getDate();
-            var now = new Date();
-			var current_year = now.getFullYear();
-            var current_month = now.getMonth();
-            var current_day = now.getDay();
-            if (current_year<=year && current_month<=month && current_day<=today) {
+            var now = Date.now();
+            if (now<product.expirationDate) {
                 this.listOfProducts.push(product);
             };
         };
@@ -96,16 +90,9 @@ Create checkoutAndBuy function which receives shopping bag and payment card and 
         this.accountBalance = Number(Math.round(accountBalance+'e2')+'e-2');
         this.status = status;
         this.validUntilDate = new Date(validUntilDate);
+        var now = Date.now();
         this.isValid = function() {
-            var year = this.validUntilDate.getFullYear();
-			var month = this.validUntilDate.getMonth() + 1;
-			var today = this.validUntilDate.getDate();
-            var now = new Date();
-			var current_year = now.getFullYear();
-            var current_month = now.getMonth();
-            var current_day = now.getDay();
-            return (current_year<=year && current_month<=month && current_day<=today);
-            
+            return (this.validUntilDate>now);
         };
     };
 
@@ -130,7 +117,7 @@ Create checkoutAndBuy function which receives shopping bag and payment card and 
 
     //testing:
     try {
-        var product = new Product("smoki", 80.556677, "12/11/2022");
+        var product = new Product("smoki", 80.556677, "29/5/2021");
         console.log(product);
         console.log(product.getInfo());
 
@@ -153,3 +140,13 @@ Create checkoutAndBuy function which receives shopping bag and payment card and 
     };
 
 })();
+
+
+
+// var today = Date.now();
+// var expire = new Date("5/5/2021");
+// console.log(today<=expire);
+// console.log(today);
+// console.log(expire);
+// console.log(expire-today);
+// console.log(today<=expire)
