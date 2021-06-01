@@ -273,31 +273,34 @@ Use Array’s built-in methods to add and remove elements from an array*/
     //testing:
     try {
 
-        // var drama = new Genre("drama");
+        var drama = new Genre("drama");
         
-        // var kum1 = createMovie("The Godfather 1", 175, drama);
-        // var kum2 = createMovie("The Godfather 2", 202, drama);
-        // var kum3 = createMovie("The Godfather 3", 162, drama);
-        // var prohujaloSaVihorom = createMovie("Gone With The Wind", 300, "drama");
+        var kum1 = createMovie("The Godfather 1", 175, 'drama');
+        var kum2 = createMovie("The Godfather 2", 202, 'drama');
+        var kum3 = createMovie("The Godfather 3", 162, 'drama');
+        var prohujaloSaVihorom = createMovie("Gone With The Wind", 300, 'drama');
         
-        // var novembarskiProgram = createProgram("11/11/2021");
-        // var decembearskiProgram = createProgram("12/12/2021")
+        var novembarskiProgram = createProgram("11/11/2021");
+        var decembearskiProgram = createProgram("12/12/2021")
         
-        // var festival = new Festival("FEST",4);
+        var festival = new Festival("FEST",4);
 
-        // novembarskiProgram.addMovie(kum1);
-        // novembarskiProgram.addMovie(prohujaloSaVihorom);
-        // decembearskiProgram.addMovie(kum2);
-        // decembearskiProgram.addMovie(kum3);
+        novembarskiProgram.addMovie(kum1);
+        novembarskiProgram.addMovie(prohujaloSaVihorom);
+        decembearskiProgram.addMovie(kum2);
+        decembearskiProgram.addMovie(kum3);
 
-        // festival.addProgram(novembarskiProgram);
-        // festival.addProgram(decembearskiProgram);
+        festival.addProgram(novembarskiProgram);
+        festival.addProgram(decembearskiProgram);
 
-        // console.log(festival);
-        // console.log(festival.getData());
+        console.log(festival);
+        console.log(festival.totalNumberOfMoviesInFestival());
+        console.log(festival.name);
+        console.log(festival.getData());
+        
 
-        // console.log(novembarskiProgram);
-        // console.log(decembearskiProgram);
+        console.log(novembarskiProgram);
+        console.log(decembearskiProgram);
 
         //additional testing:
         var drama = new Genre("drama");
@@ -307,7 +310,7 @@ Use Array’s built-in methods to add and remove elements from an array*/
         var kum5 = new Movie("The Godfather 5", 100, drama);
         var kum6 = new Movie("The Godfather 6", 100, drama);
         console.log(kum6);
-        console.log(kum4.genre);
+        console.log(kum4.getData());
         console.log(kum5.getData());
 
         var programA = new Program("01/01/2021");
@@ -318,25 +321,25 @@ Use Array’s built-in methods to add and remove elements from an array*/
         console.log(programA);
         console.log(programA.listOfMovies);
         console.log(programA.numberOfMoviesInProgram());
-        console.log(programA.isGenreExceeds()); //- Error message:Cannot read property 'genre' of undefined
-        // console.log(programA.getTotalLengthOfAllMoviesInTheProgram());
-        // console.log(programA.getData());
+        console.log(programA.isGenreExceeds(kum4)); 
+        console.log(programA.getTotalLengthOfAllMoviesInTheProgram());
+        console.log(programA.getData());
         // programA.addMovie(kum6); 
-        //programA.addMovie(kum6); 
+        // programA.addMovie(kum6); 
         
-        //var fest = new Festival("FEST", 5);
-        // console.log(fest);
-        // fest.addProgram(programA);
-        // console.log(fest.listOfPrograms);
-        // console.log(fest.totalNumberOfMoviesInFestival());
-        // console.log(fest.getData());
+        var fest = new Festival("FEST", 5);
+        console.log(fest);
+        fest.addProgram(programA);
+        console.log(fest.listOfPrograms);
+        console.log(fest.totalNumberOfMoviesInFestival());
+        console.log(fest.getData());
         
-        // var movie1 = createMovie("Nesto", 100, "krimi drama");
-        // var program1 = createProgram("03/03/2020");
-        // console.log(movie1); 
-        // console.log(program1);
+        var movie1 = createMovie("Nesto", 100, "krimi drama");
+        var program1 = createProgram("03/03/2020");
+        console.log(movie1); 
+        console.log(program1);
 
-        // programA.addMovie(kum4);
+        programA.addMovie(kum4);
         
     
 
