@@ -275,3 +275,74 @@ switch (operation) {
 }
 console.log(result);
 
+
+
+
+
+
+
+
+
+function Genre(name) {
+    if (!name) {
+        throw new Error('Field Name is required');
+    }
+    this.name = name;
+    this.getData = function () {
+        return this.name[0].toUpperCase() + this.name[this.name.length-1].toUpperCase();
+    }
+}
+
+function Movie(title, length, genre) {
+    if (!title) {
+        throw new Error('Field Title is required');
+    }
+    if (!length) {
+        throw new Error('Field Length is required');
+    }
+    if (typeof length === "string") {
+        throw new Error('The length of the movie should be a number.');
+    }
+    if (!genre) {
+        throw new Error('Field Genre is required');
+    }
+    if(!(genre instanceof Genre)) {
+        throw new Error('Invalid genre input');
+    }
+    this.title = title;
+    this.genre = genre;
+    this.length = length;
+    this.getData = function () {
+        return this.title + ", " + this.length + "min, " + this.genre.getData();
+    }
+    
+}
+
+
+function Program(date) {
+    if (!date) {
+        throw new Error('Field Date is required');
+    }
+
+    this.date = new Date(date);
+    this.listOfMovies = [];
+    //this.listOfMovies.length  -  didn't work, so created a function below:
+    this.numberOfMoviesInProgram =  function() {        
+        var count = 0;
+        this.listOfMovies.forEach(function() {
+            count ++;
+        })
+        return count;                   
+    }
+
+
+    this.isGenreExceeds = function(movie) {
+        var movies = this.listOfMovies.filter(m => m.genre.name === movie.genre.name);
+        console.log(movies.length === 4);
+    }
+};
+
+var drama = new Genre("drama");
+var kum4 = new Movie("The Godfather 4", 100, drama);
+var programA = new Program("01/01/2021");
+programA.addMovie(kum4);
