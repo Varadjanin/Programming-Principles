@@ -16,22 +16,74 @@ position
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soccer Player</title>
     <style>
-        body{
+        *{
+            box-sizing: border-box;
+        }
+        .field{
             background-image: url('field.png');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
+            position: relative;
+            width: 1345px;
+            height: 645px;
         }
-        img{
+        .player{
             width:100px;
             height: 100px;
             padding-left: 0px;
             padding-top: 0px;
+            position: absolute;
+        }
+
+        .stop {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: rgb(138, 19, 19);
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
         }
 
     </style>
+    
 </head>
 <body>
-    <img src="player.png" alt="Soccer plyer">
+    <div class="field">
+        <img src="player.png" alt="Soccer plyer" class="player">
+        <button class="stop">Stop Movement</button>
+    </div>
+
+    <script>
+
+        var field = document.querySelector('.field');
+        var player = document.querySelector('.player');
+        var button = document.querySelector('.stop');
+        var movement = true;
+
+
+        field.addEventListener('click', function (event){
+            if(movement === true) {
+            player.style.top = (event.clientY) +'px';
+            player.style.left = (event.clientX) +'px';
+            }
+
+        })
+
+        button.addEventListener('click', function() {
+            if(movement === true) {
+                movement = false;
+                button.textContent = 'Start Moving';
+            } else {
+                movement = true;
+                button.textContent = 'Stop Moving';
+            }
+        })
+
+    </script>
 </body>
 </html>
