@@ -13,16 +13,16 @@
         
         <p>Please fill in the form.</p>
         <p>Movie</p>
-        <form>
-            <label for="movie_title">Title</label>
+        <form class="forma">
+            <label>Title</label>
             <br>
-            <input class="field_width" type="text" name="movie_title" placeholder="Title" required>
+            <input class="movie_title field_width" type="text" placeholder="Title" required>
             <br>
-            <label for="movie_length">Length(min)</label>
+            <label>Length(min)</label>
             <br>
-            <input class="field_width" type="number" name="movie_length" placeholder="Length in min" required>
+            <input class="movie_length field_width" type="number" placeholder="Length in min" required>
             <br>
-            <select class="field_width" name="dropdown_genre">
+            <select class="movie_genre field_width">
                 <option value="">-</option>
                 <option value="Drama">Drama</option>
                 <option value="Action">Action</option>
@@ -34,36 +34,39 @@
                 <option value="Adventure">Adventure</option>
             </select>
             <br><br>
-            <button class="movie_create_button field_width" value="Create movie">Create movie</button>
-            <ul class="movie_list"></ul>
+            <input class="movie_create_button field_width button" type="button" value="Create movie"></input>
+            <ul class="movie_list">
+
+            </ul>
         </form>
 
         <p>Program</p>
         <form>
             <label for="program_date">Date</label>
             <br>
-            <input class="field_width" type="date" placeholder="dd-mm-yyyy" min="2021-06-15" required>
+            <input class="program_date field_width" type="date" placeholder="dd-mm-yyyy" min="2021-06-15" required>
             <br>
-            <button class="program_create_button field_width" value="Create program">Create program</button>
+            <input class="program_create_button field_width button" type="button" value="Create program"></input>
             <ul class="program_list"></ul>
 
             <label for="movie_chosen">Movie</label>
             <br>
-            <select class="field_width" name="dropdown_movies">
+            <select class="dropdown_movies field_width" name="dropdown_movies">
                 <option value="">-</option>
             </select>
             <br>
             <label for="program_chosen">Program</label>
             <br>
-            <select class="field_width" name="dropdown_programs">
+            <select class="dropdown_programs field_width" name="dropdown_programs">
                 <option value="">-</option>
             </select>
             <br>
-            <button class="add_movie_to_program_button field_width" value="Add movie to program">Add movie to program</button>
+            <input class="add_movie_to_program_button field_width button" type="button" value="Add movie to program"></input>
 
         </form>
 
     </div>
-    <script src="./festivalMovies.js"></script>
+    <script src="./entities_movieFestival.js"></script>
+    <script src="./forms_movieFestival.js"></script>
 </body>
 </html>

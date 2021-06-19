@@ -27,7 +27,7 @@ form{
     padding: 10px;
 }
 
-button{
+.button{
     background-color: #4caf4f;
     color: white;
     border: none;
