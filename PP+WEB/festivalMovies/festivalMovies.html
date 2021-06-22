@@ -31,7 +31,6 @@
                 <option value="SciFi">SciFi</option>
                 <option value="Thriller">Thriller</option>
                 <option value="Fantasy">Fantasy</option>
-                <option value="Adventure">Adventure</option>
             </select>
             <br><br>
             <input class="movie_create_button field_width button" type="button" value="Create movie"></input>
@@ -44,10 +43,12 @@
         <form>
             <label for="program_date">Date</label>
             <br>
-            <input class="program_date field_width" type="date" placeholder="dd-mm-yyyy" min="2021-06-15" required>
+            <input class="program_date field_width" type="date" placeholder="dd-mm-yyyy" required>
             <br>
             <input class="program_create_button field_width button" type="button" value="Create program"></input>
-            <ul class="program_list"></ul>
+            <ul class="program_list">
+
+            </ul>
 
             <label for="movie_chosen">Movie</label>
             <br>
@@ -58,7 +59,7 @@
             <label for="program_chosen">Program</label>
             <br>
             <select class="dropdown_programs field_width" name="dropdown_programs">
-                <option value="">-</option>
+                <option value="">-</option>           
             </select>
             <br>
             <input class="add_movie_to_program_button field_width button" type="button" value="Add movie to program"></input>
@@ -66,6 +67,20 @@
         </form>
 
     </div>
+    <script>
+         var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; 
+        var yyyy = today.getFullYear();
+            if(dd<10){
+                dd='0'+dd
+            } 
+            if(mm<10){
+                mm='0'+mm
+            } 
+        today = yyyy+'-'+mm+'-'+dd;
+        document.querySelector(".program_date").setAttribute("min", today);
+    </script>
     <script src="./entities_movieFestival.js"></script>
     <script src="./forms_movieFestival.js"></script>
 </body>
